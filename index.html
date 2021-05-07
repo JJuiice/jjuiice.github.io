@@ -1,0 +1,62 @@
+---
+layout: default 
+---
+
+<div id="headerBanner">
+    <p>
+        {{ site.data.cv.header }}
+    </p>
+</div>
+<div>
+    <h1>Skills and Proficiencies</h1>
+    <div style="width: 100%;">
+        <h2>Programming Languages</h2>
+        {% for pl in site.data.cv.pls %}
+            <div style="width: 30%; float: left;">
+                <p>{{ pl.name }}:</p>
+            </div>
+            <div style="width: 70%; float: right;">
+                <p>
+                {% for i in (1..pl.years) %}
+                    :computer:
+                {% endfor %}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <div style="width: 100%;">
+        <h2>Technical</h2>
+        {% for t_skill in site.data.cv.t_skills %}
+            <div style="width: 30%; float: left;">
+                <p>{{ t_skill.name }}:</p>
+            </div>
+            <div style="width: 70%; float: right;">
+                <p>
+                {% for i in (1..t_skill.years) %}
+                    :computer:
+                {% endfor %}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div>
+    <h1>Professional Experience</h1>
+</div>
+<div>
+    <h1>Leaderships</h1>
+</div>
+<div>
+    <h1>Projects</h1>
+</div>
+<div>
+    <h1>Contact</h1>
+    <p>
+        Want to get in touch or just say hello?
+        <br>
+        Send me an 
+        <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}">email</a> 
+        or connect with me on 
+        <a href="{{ site.data.social-media.linkedin.href }}">LinkedIn</a>
+    </p>
+</div>

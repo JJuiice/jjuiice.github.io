@@ -1,9 +1,6 @@
 theme: jekyll-theme-minimal
 
 title: Ojas Anand
-description: Tinkerer of Electronics
-email: oanand@fastmail.com
-linkedin: https://www.linkedin.com/in/ojas-a-99187910b/
-github: https://github.com/JJuiice
+logo: img/headshot.jpg
 
-header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering Major at the University of Cincinnati. I wrote my first program in when I was 12 years old. Over the past 10 years, I have pursued my both hardware and software in my free time including getting involved, in high school, with my local FIRST Lego League and FIRST Tech Challenge team and with a four-year technology program. Two summers prior to post-graduation, I interned at Wright-Patterson Air Force Base and GE respectively. Most recently, I took a software development role at Siemens Digital Industries Software for 3 co-op and 1 part-time semester during my college career. During my free time, I am involved in martial arts and volunteer at my local animal shelter. 
+plugins: [jekyll-github-metadata, jemoji]
