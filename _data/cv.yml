@@ -1,0 +1,71 @@
+header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering student at the University of Cincinnati. I have an avid interest in tinkering with electronics and wrote my first "Hello World" in Java when I was 12. After feeling like a wizard that just learned a new spell, my inner nerd awoke to the world of computers. I was the electrical engineering and software development lead for my high school robotics team and have interned at Wright-Patterson Air Force Base, GE Aviation, and Siemens Digital Industries Software where I explored a variety of roles in tech industry including R&D, project management, and software development. When I can convince myself to take a break from my projects, I practice martial arts and volunteer at my local animal shelter. 
+
+pls:
+  - name: C/C++
+    years: 8
+  
+  - name: Python
+    years: 7
+
+  - name: Assembly
+    years: 4
+  
+  - name: Verilog
+    years: 4
+
+  - name: MATLAB
+    years: 2
+
+t_skills:
+  - name: Embedded Systems
+    years: 4
+
+  - name: Agile Development (Scrum)
+    years: 3
+
+  - name: Hardware Design
+    years: 3
+  
+  - name: Signal Processing
+    years: 2
+
+pes:
+  - title: Embedded Systems Engineer
+    location: Stow, OH
+    company: Rotunda Scientific Technologies
+    s_period: November 2020
+    e_period: Present
+    details:
+      - bullet: Reviewed and aided design of multiple product prototypes while ensuring all user requirements were met
+      - bullet: Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor
+
+  - title: Software Developer 
+    location: Milford, OH
+    company: Siemens
+    s_period: Spring 2019
+    e_period: Summer 2020
+    details:
+      - bullet: Participated in university co-op program working alternating semesters (3 in total)
+      - bullet: Contributed 20+ features and fixes along with 500+ JUnit tests to Teamcenter codebase
+      - bullet: Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work
+
+  - title: IT Project Manager
+    location: Cincinnati, OH
+    company: GE Aviation
+    s_period: June 2017
+    e_period: August 2017
+    details:
+      - bullet: Corresponded with developers and customers to ensure product met desired use cases
+      - bullet: Planned project milestones and ensured deadlines for project completion were me
+
+  - title: Research Assistant 
+    location: Wright-Patterson Air Force Base, OH
+    company: WPAFB
+    s_period: June 2016
+    e_period: August 2016
+    details:
+      - bullet: Conducted research in the fields of computer vision and embedded systems in order to develop object detection solution for camera-enabled IoT devices
+      - bullet: Extracted 1500+ images from database of 100+ videos in order to train and test machine learning models
+      - bullet: Obtained “Confidential” security clearance
+
+projects: [ "chip8", "fractals", "Juice", "xdav" ]
