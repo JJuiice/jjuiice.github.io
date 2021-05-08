@@ -3,58 +3,74 @@ layout: default
 ---
 
 <div id="headerBanner">
-    <p>
+    <p style="text-align: justify;">
         {{ site.data.cv.header }}
     </p>
 </div>
 <div>
     <h1>Skills and Proficiencies</h1>
-    <div style="width: 100%;">
+    <div>
         <h2>Programming Languages</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         {% for pl in site.data.cv.pls %}
-            <div style="width: 30%; float: left;">
-                <p>{{ pl.name }}:</p>
-            </div>
-            <div style="width: 70%; float: right;">
-                <p>
-                {% for i in (1..pl.years) %}
-                    :computer:
-                {% endfor %}
-                </p>
-            </div>
+            <p style="flex-grow: 1;">
+                {{ pl.name }}
+            </p>
         {% endfor %}
+        </div>
     </div>
-    <div style="width: 100%;">
+    <div>
         <h2>Technical</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         {% for t_skill in site.data.cv.t_skills %}
-            <div style="width: 30%; float: left;">
-                <p>{{ t_skill.name }}:</p>
-            </div>
-            <div style="width: 70%; float: right;">
-                <p>
-                {% for i in (1..t_skill.years) %}
-                    :computer:
-                {% endfor %}
-                </p>
-            </div>
+            <p style="flex-grow: 1;">
+                {{ t_skill.name }}
+            </p>
         {% endfor %}
+        </div>
     </div>
 </div>
 <div>
     <h1>Professional Experience</h1>
-</div>
-<div>
-    <h1>Leaderships</h1>
+    {% for pe in site.data.cv.pes %}
+    <div style="display: flex; justify-content: space-between;">
+        <p style="text-align: left;">
+            <b>{{ pe.title }}</b>
+        </p>
+        <p style="text-align: right;">
+            {{ pe.s_period }} - {{ pe.e_period }}
+        </p>
+    </div>
+    <p>
+        <i>{{ pe.company }} / {{ pe.location }}</i>
+    </p>
+    <p>
+        <ul>
+        {% for bullet in pe.details %}
+            <li>{{ bullet.bullet }}</li>
+            <br>
+        {% endfor %}
+        </ul>
+    </p>
+    {% endfor %}
 </div>
 <div>
     <h1>Projects</h1>
+    <ul style="padding: 0; list-style-type: none;">
+    {% for repository in site.github.public_repositories %}
+        {% if site.data.cv.projects contains repository.name %}
+        <li><b><a href="{{ repository.html_url }}">{{ repository.name }}</a></b> - {{ repository.description }}</li>
+        <br>
+        {% endif %}
+    {% endfor %}
+    </ul>
 </div>
 <div>
     <h1>Contact</h1>
     <p>
         Want to get in touch or just say hello?
         <br>
-        Send me an 
+        Send an 
         <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}">email</a> 
         or connect with me on 
         <a href="{{ site.data.social-media.linkedin.href }}">LinkedIn</a>

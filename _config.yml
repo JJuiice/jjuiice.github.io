@@ -3,4 +3,4 @@ theme: jekyll-theme-minimal
 title: Ojas Anand
 logo: img/headshot.jpg
 
-plugins: [jekyll-github-metadata, jemoji]
+plugins: [jekyll-github-metadata]

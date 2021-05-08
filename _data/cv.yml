@@ -1,4 +1,4 @@
-header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering Major at the University of Cincinnati. I wrote my first program in when I was 12 years old. Over the past 10 years, I have pursued my both hardware and software in my free time including getting involved, in high school, with my local FIRST Lego League and FIRST Tech Challenge team and with a four-year technology program. Two summers prior to post-graduation, I interned at Wright-Patterson Air Force Base and GE respectively. Most recently, I took a software development role at Siemens Digital Industries Software for 3 co-op and 1 part-time semester during my college career. During my free time, I am involved in martial arts and volunteer at my local animal shelter. 
+header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering student at the University of Cincinnati. I have an avid interest in tinkering with electronics and wrote my first "Hello World" in Java when I was 12. After feeling like a wizard that just learned a new spell, my inner nerd awoke to the world of computers. I was the electrical engineering and software development lead for my high school robotics team and have interned at Wright-Patterson Air Force Base, GE Aviation, and Siemens Digital Industries Software where I explored a variety of roles in tech industry including R&D, project management, and software development. When I can convince myself to take a break from my projects, I practice martial arts and volunteer at my local animal shelter. 
 
 pls:
   - name: C/C++
@@ -36,8 +36,8 @@ pes:
     s_period: November 2020
     e_period: Present
     details:
-      - bullet_one: Reviewed and aided design of multiple product prototypes while ensuring product stayed within
-      - bullet_two: Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor
+      - bullet: Reviewed and aided design of multiple product prototypes while ensuring all user requirements were met
+      - bullet: Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor
 
   - title: Software Developer 
     location: Milford, OH
@@ -45,9 +45,9 @@ pes:
     s_period: Spring 2019
     e_period: Summer 2020
     details:
-      - bullet_one: Participated in university co-op program working alternating semesters (3 in total)
-      - bullet_two: Contributed 20+ features and fixes along with 500+ JUnit tests to Teamcenter codebase
-      - bullet_three: Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work
+      - bullet: Participated in university co-op program working alternating semesters (3 in total)
+      - bullet: Contributed 20+ features and fixes along with 500+ JUnit tests to Teamcenter codebase
+      - bullet: Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work
 
   - title: IT Project Manager
     location: Cincinnati, OH
@@ -55,8 +55,8 @@ pes:
     s_period: June 2017
     e_period: August 2017
     details:
-      - bullet_one: Corresponded with developers and customers to ensure product met desired use cases
-      - bullet_two: Planned project milestones and ensured deadlines for project completion were me
+      - bullet: Corresponded with developers and customers to ensure product met desired use cases
+      - bullet: Planned project milestones and ensured deadlines for project completion were me
 
   - title: Research Assistant 
     location: Wright-Patterson Air Force Base, OH
@@ -64,18 +64,8 @@ pes:
     s_period: June 2016
     e_period: August 2016
     details:
-      - bullet_one: Conducted research in the fields of computer vision and embedded systems in order to develop object detection solution for camera-enabled IoT devices
-      - bullet_two: Extracted 1500+ images from database of 100+ videos in order to train and test machine learning models
-      - bullet_three: Obtained “Confidential” security clearance
+      - bullet: Conducted research in the fields of computer vision and embedded systems in order to develop object detection solution for camera-enabled IoT devices
+      - bullet: Extracted 1500+ images from database of 100+ videos in order to train and test machine learning models
+      - bullet: Obtained “Confidential” security clearance
 
-leaderships:
-  - title: Multiple Cabinet Positions
-    org: Sigma Tau Gamma Fraternity
-    s_period: September 2017
-    e_period: Present
-    details: Aided executive board in organization of 20+ fundraising, academic, and philanthropy events
-
-
-projects:
-  - name: AI Assignments
-    url: https://github.com/JJuiice/AI-Assignments
+projects: [ "chip8", "fractals", "Juice", "xdav" ]
