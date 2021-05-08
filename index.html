@@ -59,7 +59,7 @@ layout: default
     <ul style="padding: 0; list-style-type: none;">
     {% for repository in site.github.public_repositories %}
         {% if site.data.cv.projects contains repository.name %}
-        <li><b><a href="{{ repository.html_url }}">{{ repository.name }}</a></b> - {{ repository.description }}</li>
+        <li><b><a href="{{ repository.html_url }}" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
         <br>
         {% endif %}
     {% endfor %}
@@ -73,6 +73,6 @@ layout: default
         Send an 
         <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}">email</a> 
         or connect with me on 
-        <a href="{{ site.data.social-media.linkedin.href }}">LinkedIn</a>
+        <a href="{{ site.data.social-media.linkedin.href }}/in/{{ site.data.social-media.linkedin.id }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </p>
 </div>
