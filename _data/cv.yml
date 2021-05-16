@@ -35,37 +35,41 @@ pes:
     company: Rotunda Scientific Technologies
     s_period: November 2020
     e_period: Present
-    details:
-      - bullet: Reviewed and aided design of multiple product prototypes while ensuring all user requirements were met
-      - bullet: Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor
+    details: [
+      "Reviewed and aided design of multiple product prototypes while ensuring all user requirements were met",
+      "Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor"
+    ]
 
   - title: Software Developer 
     location: Milford, OH
     company: Siemens
     s_period: Spring 2019
     e_period: Summer 2020
-    details:
-      - bullet: Participated in university co-op program working alternating semesters (3 in total)
-      - bullet: Contributed 20+ features and fixes along with 500+ JUnit tests to Teamcenter codebase
-      - bullet: Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work
+    details: [
+      "Participated in university co-op program working alternating semesters (3 in total)",
+      "Contributed 20+ features and fixes along with 500+ JUnit tests to Teamcenter codebase",
+      "Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work"
+    ]
 
   - title: IT Project Manager
     location: Cincinnati, OH
     company: GE Aviation
     s_period: June 2017
     e_period: August 2017
-    details:
-      - bullet: Corresponded with developers and customers to ensure product met desired use cases
-      - bullet: Planned project milestones and ensured deadlines for project completion were me
+    details: [
+      "Corresponded with developers and customers to ensure product met desired use cases",
+      "Planned project milestones and ensured deadlines for project completion were me"
+    ]
 
   - title: Research Assistant 
     location: Wright-Patterson Air Force Base, OH
     company: WPAFB
     s_period: June 2016
     e_period: August 2016
-    details:
-      - bullet: Conducted research in the fields of computer vision and embedded systems in order to develop object detection solution for camera-enabled IoT devices
-      - bullet: Extracted 1500+ images from database of 100+ videos in order to train and test machine learning models
-      - bullet: Obtained “Confidential” security clearance
+    details: [
+      "Conducted research in the fields of computer vision and embedded systems in order to develop object detection solution for camera-enabled IoT devices",
+      "Extracted 1500+ images from database of 100+ videos in order to train and test machine learning models",
+      "Obtained “Confidential” security clearance"
+    ]
 
-projects: [ "chip8", "fractals", "Juice", "xdav" ]
+projects: [ "chip8", "fractals", "juice", "xdav" ]
