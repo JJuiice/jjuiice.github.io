@@ -47,7 +47,7 @@ layout: default
     <p>
         <ul>
         {% for bullet in pe.details %}
-            <li>{{ bullet.bullet }}</li>
+            <li>{{ bullet }}</li>
             <br>
         {% endfor %}
         </ul>
@@ -58,7 +58,8 @@ layout: default
     <h1>Projects</h1>
     <ul style="padding: 0; list-style-type: none;">
     {% for repository in site.github.public_repositories %}
-        {% if site.data.cv.projects contains repository.name %}
+        {% assign repo_name = repository.name | downcase %}
+        {% if site.data.cv.projects contains repo_name %}
         <li><b><a href="{{ repository.html_url }}" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
         <br>
         {% endif %}
@@ -67,12 +68,19 @@ layout: default
 </div>
 <div>
     <h1>Contact</h1>
-    <p>
-        Want to get in touch or just say hello?
-        <br>
-        Send an 
-        <a href="{{ site.data.social-media.email.href }}{{ site.data.social-media.email.id }}">email</a> 
-        or connect with me on 
-        <a href="{{ site.data.social-media.linkedin.href }}/in/{{ site.data.social-media.linkedin.id }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </p>
+    <div style="display: inline-flex; flex-direction: column;">
+        <p>
+            Want to get in touch or just say hello? Send an email or connect with me on LinkedIn!
+        </p>
+        <div style="display: flex; justify-content: space-around;">
+            {% for social in site.data.contact.social-media %}
+            {% assign title_downcase = social.title | downcase %}
+            {% if title_downcase == "email" %}
+            <a href="{{ social.href }}{{ social.id }}"><i class="{{ social.fa-icon }}"></i></a> 
+            {% else %}
+            <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer"><i class="{{ social.fa-icon }}"></i></a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </div>

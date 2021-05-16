@@ -1,0 +1,10 @@
+social-media:
+    - id: 'oanand@fastmail.com'
+      href: 'mailto:'
+      title: 'Email'
+      fa-icon: 'far fa-envelope fa-3x'
+
+    - id: 'ojas-a-99187910b'
+      href: 'https://www.linkedin.com/in/'
+      title: 'LinkedIn'
+      fa-icon: 'fab fa-linkedin fa-3x'
