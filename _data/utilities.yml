@@ -1,0 +1,3 @@
+ibscripts:
+  - script: BeagleBone Device Tree Overlay Generator
+    page: dtog
