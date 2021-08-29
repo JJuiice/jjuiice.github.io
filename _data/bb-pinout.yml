@@ -1,0 +1,55 @@
+P8:
+  - num: 3
+    name: "GPIO1_6"
+    modes:
+      - num: 0
+        name: "gpmc_ad6"
+      - num: 1
+        name: "mmc1_dat6"
+      - num: 7
+        name: "gpio1[6]"
+  - num: 4
+    name: "GPIO1_7"
+    modes:
+      - num: 0
+        name: "gpmc_ad7"
+      - num: 1
+        name: "mmc1_dat7"
+      - num: 7
+        name: "gpio1[7]"
+
+P9:
+  - num: 11
+    name: "UART4_RXD"
+    modes:
+      - num: 0
+        name: "gpmc_wait0"
+      - num: 1
+        name: "mii2_crs"
+      - num: 2
+        name: "gpmc_csn4"
+      - num: 3
+        name: "rmii2_crs_dv"
+      - num: 4
+        name: "mmc1_sdcd"
+      - num: 6
+        name: "uart4_rxd_mux2"
+      - num: 7
+        name: "gpio0[30]"
+  - num: 12
+    name: "GPIO1_28"
+    modes:
+      - num: 0
+        name: "gpmc_be1n"
+      - num: 1
+        name: "mii2_col"
+      - num: 2
+        name: "gpmc_csn6"
+      - num: 3
+        name: "mmc2_dat3"
+      - num: 4
+        name: "gpmc_dir"
+      - num: 6
+        name: "mcasp0_aclkr_mux3"
+      - num: 7
+        name: "gpio1[28]"

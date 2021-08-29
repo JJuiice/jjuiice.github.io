@@ -1,0 +1,32 @@
+---
+layout: default
+title: DTOG
+---
+<h1>Device Tree Overlay Generator</h1>
+<form>
+	<div>
+		<label for="header-select">Header:</label>
+		<fieldset id="header-select">
+			<label for="P8">P8</label>
+			<input id="P8" type="radio" name="header-select">
+			<br>
+			<label for="P9">P9</label>
+			<input id="P9" type="radio" name="header-select">
+		</fieldset>
+	</div>
+	<div>
+		<label for="pin-selects">Pin:</label>
+		<div id="pin-selects" class="">
+			<select id="pin-select-p8">
+				{% for pin in site.data.bb-pinout.P8 %}
+				<option>{{ pin.num }}</option>
+				{% endfor %}
+			</select>
+			<select id="pin-select-p9">
+				{% for pin in site.data.bb-pinout.P9 %}
+				<option>{{ pin.num }}</option>
+				{% endfor %}
+			</select>
+		</div>
+	</div>
+</form>

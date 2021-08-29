@@ -55,7 +55,7 @@ layout: default
     {% for repository in site.github.public_repositories %}
         {% assign repo_name = repository.name | downcase %}
         {% if site.data.cv.projects contains repo_name %}
-        <li><b><a href="{{ repository.html_url }}" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
+        <li><b><a href="{{ repository.html_url }}.html" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
         <br>
         {% endif %}
     {% endfor %}
@@ -64,9 +64,11 @@ layout: default
 <div>
     <h1>In-Browser Scripts</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        <a href="#">
-
+        {% for script in site.data.scripts.ibscripts %}
+        <a href="{{ script.page }}">
+            {{ script.name }}
         </a>
+        {% endfor %}
     </div>
 </div>
 <div>

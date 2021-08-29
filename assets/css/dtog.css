@@ -1,0 +1,11 @@
+#pin-selects select {
+	display:none;
+}
+
+#pin-selects.p8 #pin-select-p8 {
+	display:block;
+}
+
+#pin-selects.p9 #pin-select-p9 {
+	display:block;
+}
