@@ -9,3 +9,7 @@
 #pin-selects.p9 #pin-select-p9 {
 	display:block;
 }
+
+#mode-selects select {
+	display:none;
+}

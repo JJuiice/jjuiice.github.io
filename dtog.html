@@ -19,14 +19,45 @@ title: DTOG
         <div class="" id="pin-selects">
             <select id="pin-select-p8">
                 {% for pin in site.data.bb-pinout.P8 %}
-                    <option>{{ pin.num }}</option>
+                    <option value="p8-{{ pin.num }}">{{ pin.num }}
+                        -
+                        {{ pin.name }}</option>
                 {% endfor %}
             </select>
             <select id="pin-select-p9">
                 {% for pin in site.data.bb-pinout.P9 %}
-                    <option>{{ pin.num }}</option>
+                    <option value="p9-{{ pin.num }}">{{ pin.num }}
+                        -
+                        {{ pin.name }}</option>
                 {% endfor %}
             </select>
+        </div>
+    </div>
+    <div>
+        <label for="mode-selects">Mode:</label>
+        <div class="" id="mode-selects">
+            <div id="mode-select-p8">
+                {% for pin in site.data.bb-pinout.P8 %}
+                    <select id="p8-{{ pin.num }}">
+                        {% for mode in pin.modes %}
+                            <option>Mode
+                                {{ mode.num }}:
+                                {{ mode.name }}</option>
+                        {% endfor %}
+                    </select>
+                {% endfor %}
+            </div>
+            <div id="mode-select-p9">
+                {% for pin in site.data.bb-pinout.P9 %}
+                    <select id="p9-{{ pin.num }}">
+                        {% for mode in pin.modes %}
+                            <option>Mode
+                                {{ mode.num }}:
+                                {{ mode.name }}</option>
+                        {% endfor %}
+                    </select>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </form>
