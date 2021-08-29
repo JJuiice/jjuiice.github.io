@@ -7,67 +7,76 @@ layout: default
     <div>
         <h2>Programming Languages</h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        {% for pl in site.data.cv.pls %}
-            <p style="flex-grow: 1;">
-                {{ pl.name }}
-            </p>
-        {% endfor %}
+            {% for pl in site.data.cv.pls %}
+                <p style="flex-grow: 1;">
+                    {{ pl.name }}
+                </p>
+            {% endfor %}
         </div>
     </div>
     <div>
         <h2>Technical</h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        {% for t_skill in site.data.cv.t_skills %}
-            <p style="flex-grow: 1;">
-                {{ t_skill.name }}
-            </p>
-        {% endfor %}
+            {% for t_skill in site.data.cv.t_skills %}
+                <p style="flex-grow: 1;">
+                    {{ t_skill.name }}
+                </p>
+            {% endfor %}
         </div>
     </div>
 </div>
 <div>
     <h1>Professional Experience</h1>
     {% for pe in site.data.cv.pes %}
-    <div style="display: flex; justify-content: space-between;">
-        <p style="text-align: left;">
-            <b>{{ pe.title }}</b>
+        <div style="display: flex; justify-content: space-between;">
+            <p style="text-align: left;">
+                <b>{{ pe.title }}</b>
+            </p>
+            <p style="text-align: right;">
+                {{ pe.s_period }}
+                -
+                {{ pe.e_period }}
+            </p>
+        </div>
+        <p>
+            <i>{{ pe.company }}
+                /
+                {{ pe.location }}</i>
         </p>
-        <p style="text-align: right;">
-            {{ pe.s_period }} - {{ pe.e_period }}
+        <p>
+            <ul>
+                {% for bullet in pe.details %}
+                    <li>{{ bullet }}</li>
+                    <br>
+                {% endfor %}
+            </ul>
         </p>
-    </div>
-    <p>
-        <i>{{ pe.company }} / {{ pe.location }}</i>
-    </p>
-    <p>
-        <ul>
-        {% for bullet in pe.details %}
-            <li>{{ bullet }}</li>
-            <br>
-        {% endfor %}
-        </ul>
-    </p>
     {% endfor %}
 </div>
 <div>
     <h1>Projects</h1>
     <ul style="padding: 0; list-style-type: none;">
-    {% for repository in site.github.public_repositories %}
-        {% assign repo_name = repository.name | downcase %}
-        {% if site.data.cv.projects contains repo_name %}
-        <li><b><a href="{{ repository.html_url }}.html" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
-        <br>
-        {% endif %}
-    {% endfor %}
+        {% for repository in site.github.public_repositories %}
+            {% assign repo_name = repository.name | downcase %}
+            {% if site.data.cv.projects contains repo_name %}
+                <li>
+                    <b>
+                        <a href="{{ repository.html_url }}.html" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a>
+                    </b>
+                    -
+                    {{ repository.description }}</li>
+                <br>
+            {% endif %}
+        {% endfor %}
     </ul>
 </div>
 <div>
     <h1>In-Browser Scripts</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         {% for script in site.data.scripts.ibscripts %}
-        <a href="{{ script.page }}">
-            {{ script.name }}
-        </a>
+            <a href="{{ script.page }}">
+                {{ script.name }}
+            </a>
         {% endfor %}
     </div>
 </div>
@@ -79,12 +88,16 @@ layout: default
         </p>
         <div style="display: flex; justify-content: space-around;">
             {% for social in site.data.contact.social-media %}
-            {% assign title_downcase = social.title | downcase %}
-            {% if title_downcase == "email" %}
-            <a href="{{ social.href }}{{ social.id }}"><i class="{{ social.fa-icon }}"></i></a>
-            {% else %}
-            <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer"><i class="{{ social.fa-icon }}"></i></a>
-            {% endif %}
+                {% assign title_downcase = social.title | downcase %}
+                {% if title_downcase == "email" %}
+                    <a href="{{ social.href }}{{ social.id }}">
+                        <i class="{{ social.fa-icon }}"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer">
+                        <i class="{{ social.fa-icon }}"></i>
+                    </a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
