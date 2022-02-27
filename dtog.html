@@ -2,62 +2,137 @@
 layout: default
 title: DTOG
 ---
-<h1>Device Tree Overlay Generator</h1>
-<form>
-    <div>
-        <label for="header-select">Header:</label>
-        <fieldset id="header-select">
-            <label for="P8">P8</label>
-            <input id="P8" name="header-select" type="radio">
-            <br>
-            <label for="P9">P9</label>
-            <input id="P9" name="header-select" type="radio">
-        </fieldset>
-    </div>
-    <div>
-        <label for="pin-selects">Pin:</label>
-        <div class="" id="pin-selects">
-            <select id="pin-select-p8">
-                {% for pin in site.data.bb-pinout.P8 %}
-                    <option value="p8-{{ pin.num }}">{{ pin.num }}
-                        -
-                        {{ pin.name }}</option>
-                {% endfor %}
-            </select>
-            <select id="pin-select-p9">
+<h1>BeagleBone Black Device Tree Overlay Generator</h1>
+<form class="pinmux-conf">
+    <fieldset id="p9">
+        <legend>P9</legend>
+        <div class="pinmux-sel">
+            <div class="pinmux-odd">
                 {% for pin in site.data.bb-pinout.P9 %}
-                    <option value="p9-{{ pin.num }}">{{ pin.num }}
-                        -
-                        {{ pin.name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    </div>
-    <div>
-        <label for="mode-selects">Mode:</label>
-        <div class="" id="mode-selects">
-            <div id="mode-select-p8">
-                {% for pin in site.data.bb-pinout.P8 %}
-                    <select id="p8-{{ pin.num }}">
-                        {% for mode in pin.modes %}
-                            <option>Mode
-                                {{ mode.num }}:
-                                {{ mode.name }}</option>
-                        {% endfor %}
-                    </select>
+                    {% assign isOdd = pin.num | modulo: 2 %}
+                    {% if isOdd != 0%}
+                        <label for="p9_{{ pin.num }}">{{ pin.num }}</label>
+                        <input id="p9_{{ pin.num }}" type="checkbox">
+                        <select id="p9-{{ pin.num }}">
+                            {% for mode in pin.modes %}
+                                <option>Mode
+                                    {{ mode.num }}:
+                                    {{ mode.name }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
                 {% endfor %}
             </div>
-            <div id="mode-select-p9">
+            <div class="pinmux-even">
                 {% for pin in site.data.bb-pinout.P9 %}
-                    <select id="p9-{{ pin.num }}">
-                        {% for mode in pin.modes %}
-                            <option>Mode
-                                {{ mode.num }}:
-                                {{ mode.name }}</option>
-                        {% endfor %}
-                    </select>
+                    {% assign isOdd = pin.num | modulo: 2 %}
+                    {% if isOdd == 0%}
+                        <label for="p9_{{ pin.num }}">{{ pin.num }}</label>
+                        <input id="p9_{{ pin.num }}" type="checkbox">
+                        <select id="p9-{{ pin.num }}">
+                            {% for mode in pin.modes %}
+                                <option>Mode
+                                    {{ mode.num }}:
+                                    {{ mode.name }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </fieldset>
+    <fieldset id="p8">
+        <legend>P8</legend>
+        <div class="pinmux-sel">
+            <div class="pinmux-odd">
+                {% for pin in site.data.bb-pinout.P8 %}
+                    {% assign isOdd = pin.num | modulo: 2 %}
+                    {% if isOdd != 0%}
+                        <label for="p8_{{ pin.num }}">{{ pin.num }}</label>
+                        <input id="p8_{{ pin.num }}" type="checkbox">
+                        <select id="p8-{{ pin.num }}">
+                            {% for mode in pin.modes %}
+                                <option>Mode
+                                    {{ mode.num }}:
+                                    {{ mode.name }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="pinmux-even">
+                {% for pin in site.data.bb-pinout.P8 %}
+                    {% assign isOdd = pin.num | modulo: 2 %}
+                    {% if isOdd == 0%}
+                        <label for="p8_{{ pin.num }}">{{ pin.num }}</label>
+                        <input id="p8_{{ pin.num }}" type="checkbox">
+                        <select id="p8-{{ pin.num }}">
+                            {% for mode in pin.modes %}
+                                <option>Mode
+                                    {{ mode.num }}:
+                                    {{ mode.name }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </fieldset>
 </form>
+
+<h2>Generated DTS</h2>
+<pre><code>
+/dts-v1/;
+/plugin/;
+
+#include &lt;dt-bindings/board/am335x-bbw-bbb-bash.h&gt;
+
+/ {
+    compatible = "ti,beaglebone", "ti,beaglebone-black";
+
+    part-number = "BB-&lt;your-part-name&gt;";
+    version = "00A0";
+    exclusive-use =
+
+    /*
+     * Helper to show loaded overlays under: /proc/device-tree/chosen/overlays/
+     */
+    fragment@0 {
+        target-path="/";
+        __overlay__ {
+            chosen {
+                overlays {
+                    BB-&lt;your-part-name&gt;-00A0 = __TIMESTAMP__;
+                };
+            };
+        };
+    };
+
+    /*
+     * Disable pins to be configured so that conflicts may be avoided
+     */
+    fragment@1 {
+        target = &lt;&ocp&gt;;
+        __overlay__ {
+        };
+    };
+
+    /*
+     * AM33XX PINMUX Configuration
+     */
+    fragment@2 {
+        target = &lt;&am33xx_pinmux&gt;;
+        __overlay__ {
+        };
+    };
+
+    /*
+     * Use bone-pinmux-helper to apply our pinmux
+     */
+    fragment@3 {
+        target = &lt;&ocp&gt;;
+        __overlay__ {
+        };
+    };
+};
+</code></pre>

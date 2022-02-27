@@ -13,3 +13,20 @@
 #mode-selects select {
 	display:none;
 }
+
+label {
+	display: block;
+}
+
+.pinmux-sel {
+	clear: both;
+}
+
+.pinmux-sel div {
+	width: 50%;
+	display: inline-block;
+}
+
+.pinmux-odd {
+	float: left;
+}
