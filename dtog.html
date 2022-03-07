@@ -3,7 +3,7 @@ layout: default
 title: DTOG
 ---
 <h1>BeagleBone Black Device Tree Overlay Generator</h1>
-<form class="pinmux-conf">
+<form action="javascript:generateDTS()" class="pinmux-conf">
     <fieldset id="p9">
         <legend>P9</legend>
         <div class="pinmux-sel">
@@ -78,61 +78,11 @@ title: DTOG
             </div>
         </div>
     </fieldset>
+    <br>
+    <input type="submit" value="Generate DTS Overlay">
 </form>
+<br>
 
 <h2>Generated DTS</h2>
-<pre><code>
-/dts-v1/;
-/plugin/;
-
-#include &lt;dt-bindings/board/am335x-bbw-bbb-bash.h&gt;
-
-/ {
-    compatible = "ti,beaglebone", "ti,beaglebone-black";
-
-    part-number = "BB-&lt;your-part-name&gt;";
-    version = "00A0";
-    exclusive-use =
-
-    /*
-     * Helper to show loaded overlays under: /proc/device-tree/chosen/overlays/
-     */
-    fragment@0 {
-        target-path="/";
-        __overlay__ {
-            chosen {
-                overlays {
-                    BB-&lt;your-part-name&gt;-00A0 = __TIMESTAMP__;
-                };
-            };
-        };
-    };
-
-    /*
-     * Disable pins to be configured so that conflicts may be avoided
-     */
-    fragment@1 {
-        target = &lt;&ocp&gt;;
-        __overlay__ {
-        };
-    };
-
-    /*
-     * AM33XX PINMUX Configuration
-     */
-    fragment@2 {
-        target = &lt;&am33xx_pinmux&gt;;
-        __overlay__ {
-        };
-    };
-
-    /*
-     * Use bone-pinmux-helper to apply our pinmux
-     */
-    fragment@3 {
-        target = &lt;&ocp&gt;;
-        __overlay__ {
-        };
-    };
-};
+<pre><code id="dts_out">
 </code></pre>
