@@ -24,15 +24,13 @@ const frag_0 = `
       };
     };
   };\n`;
-const frag_1 = `
+const frag_1_open = `
   /*
    * Disable pins to be configured so that conflicts may be avoided
    */
   fragment@1 {
     target = <&ocp>;
-    __overlay__ {
-    };
-  };\n`;
+    __overlay__ {\n`;
 const am33xx_pinmux_conf = `
   /*
    * AM33XX PINMUX Configuration
@@ -54,5 +52,19 @@ const bone_pinmux_helper_conf = `
 const close_brac = "};"
 
 function generateDTS() {
-	document.querySelector("#dts_out").textContent = header + bb_dts_comm_init + frag_0 + frag_1 + close_brac;
+  const P9_CONFS = document.querySelectorAll("#p9 input[type=checkbox]:checked");
+  const P8_CONFS = document.querySelectorAll("#p8 input[type=checkbox]:checked");
+
+  var disable_pins = "";
+
+  P8_CONFS.forEach(pin =>
+    disable_pins = disable_pins.concat("\tP8_", pin.id.substring(pin.id.indexOf("_") + 1), "_pinmux { status = \"disabled\"; };\n")
+  );
+  P9_CONFS.forEach(pin =>
+    disable_pins = disable_pins.concat("\tP9_", pin.id.substring(pin.id.indexOf("_") + 1), "_pinmux { status = \"disabled\"; };\n")
+  );
+
+  var generated_dts = header + bb_dts_comm_init + frag_0 + frag_1_open + disable_pins + "    " + close_brac + "\n  " + close_brac + "\n" + close_brac;
+
+  document.querySelector("#dts_out").textContent = generated_dts;
 }
