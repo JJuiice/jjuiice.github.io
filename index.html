@@ -1,12 +1,7 @@
 ---
-layout: default 
+layout: default
 ---
 
-<div id="headerBanner">
-    <p style="text-align: justify;">
-        {{ site.data.cv.header }}
-    </p>
-</div>
 <div>
     <h1>Skills and Proficiencies</h1>
     <div>
@@ -76,7 +71,7 @@ layout: default
             {% for social in site.data.contact.social-media %}
             {% assign title_downcase = social.title | downcase %}
             {% if title_downcase == "email" %}
-            <a href="{{ social.href }}{{ social.id }}"><i class="{{ social.fa-icon }}"></i></a> 
+            <a href="{{ social.href }}{{ social.id }}"><i class="{{ social.fa-icon }}"></i></a>
             {% else %}
             <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer"><i class="{{ social.fa-icon }}"></i></a>
             {% endif %}
