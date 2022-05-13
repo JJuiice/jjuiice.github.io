@@ -1,15 +1,15 @@
-header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering student at the University of Cincinnati. I have an avid interest in tinkering with electronics and wrote my first "Hello World" in Java when I was 12. After feeling like a wizard that just learned a new spell, my inner nerd awoke to the world of computers. I was the electrical engineering and software development lead for my high school robotics team and have interned at Wright-Patterson Air Force Base, GE Aviation, and Siemens Digital Industries Software where I explored a variety of roles in tech industry including R&D, project management, and software development. When I can convince myself to take a break from my projects, I practice martial arts and volunteer at my local animal shelter. 
+header: Hi, I'm Ojas! I'm a fourth-year Computer Engineering student at the University of Cincinnati. I have an avid interest in tinkering with electronics and wrote my first "Hello World" in Java when I was 12. After feeling like a wizard that just learned a new spell, my inner nerd awoke to the world of computers. I was the electrical engineering and software development lead for my high school robotics team and have interned at Wright-Patterson Air Force Base, GE Aviation, and Siemens Digital Industries Software where I explored a variety of roles in tech industry including R&D, project management, and software development. When I can convince myself to take a break from my projects, I practice martial arts and volunteer at my local animal shelter.
 
 pls:
   - name: C/C++
     years: 8
-  
+
   - name: Python
     years: 7
 
   - name: Assembly
     years: 4
-  
+
   - name: Verilog
     years: 4
 
@@ -25,7 +25,7 @@ t_skills:
 
   - name: Hardware Design
     years: 3
-  
+
   - name: Signal Processing
     years: 2
 
@@ -34,13 +34,19 @@ pes:
     location: Stow, OH
     company: Rotunda Scientific Technologies
     s_period: November 2020
-    e_period: Present
+    e_period: May 2022
     details: [
-      "Reviewed and aided design of multiple product prototypes while ensuring all user requirements were met",
-      "Applied knowledge of electronics, signal processing, embedded systems, and website development in order to gather, process, and display signal data generated from sensor"
+      "Conducted research in the field of radiation technology for product design and development",
+      "Applied knowledge of embedded systems and electronics in order to develop real-time solution on a single-board computer; accuracy down to the millisecond was required",
+      "Utilized signal generator in order to analyze sensor response to various input frequencies of waves; 20+ tests run",
+      "Developed skeleton framework for website frontend of application using Python, Javascript, CSS, and HTML",
+      "Designed custom PCB schematics to interface with central computing device",
+      "Pioneered robust software development and production workflow for device; applied embedded Linux, CI/CD, and Docker knowledge in order to ensure OS image is correctly built, preloaded, and installed on SBC",
+      "Learned basics of 2D CAD and control systems in order to design product baseplate",
+      "Maintained multiple git repositories and deployment system; implemented relevant DevOp tools and documentation to simplify training of new employees"
     ]
 
-  - title: Software Developer 
+  - title: Software Developer
     location: Milford, OH
     company: Siemens
     s_period: Spring 2019
@@ -51,7 +57,7 @@ pes:
       "Hosted meetings with local and overseas team to resolve defects, plan stories, and demo completed work"
     ]
 
-  - title: IT Project Manager
+  - title: Project Manager
     location: Cincinnati, OH
     company: GE Aviation
     s_period: June 2017
@@ -61,7 +67,7 @@ pes:
       "Planned project milestones and ensured deadlines for project completion were me"
     ]
 
-  - title: Research Assistant 
+  - title: Research Assistant
     location: Wright-Patterson Air Force Base, OH
     company: WPAFB
     s_period: June 2016
