@@ -2,79 +2,47 @@
 layout: default
 ---
 
-<div>
-    <h1>Skills and Proficiencies</h1>
-    <div>
-        <h2>Programming Languages</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        {% for pl in site.data.cv.pls %}
-            <p style="flex-grow: 1;">
-                {{ pl.name }}
-            </p>
-        {% endfor %}
-        </div>
-    </div>
-    <div>
-        <h2>Technical</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-        {% for t_skill in site.data.cv.t_skills %}
-            <p style="flex-grow: 1;">
-                {{ t_skill.name }}
-            </p>
-        {% endfor %}
-        </div>
-    </div>
-</div>
-<div>
-    <h1>Professional Experience</h1>
-    {% for pe in site.data.cv.pes %}
-    <div style="display: flex; justify-content: space-between;">
-        <p style="text-align: left;">
-            <b>{{ pe.title }}</b>
-        </p>
-        <p style="text-align: right;">
-            {{ pe.s_period }} - {{ pe.e_period }}
-        </p>
-    </div>
-    <p>
-        <i>{{ pe.company }} / {{ pe.location }}</i>
-    </p>
-    <p>
-        <ul>
-        {% for bullet in pe.details %}
-            <li>{{ bullet }}</li>
-            <br>
-        {% endfor %}
-        </ul>
-    </p>
-    {% endfor %}
-</div>
-<div>
+<p align="justify">
+    {{ site.data.cv.synopsis }}
+</p>
+<div style="margin-bottom: 20px;">
     <h1>Projects</h1>
+    <p>
+        Some of these may still be WIP
+    </p>
     <ul style="padding: 0; list-style-type: none;">
-    {% for repository in site.github.public_repositories %}
-        {% assign repo_name = repository.name | downcase %}
-        {% if site.data.cv.projects contains repo_name %}
-        <li><b><a href="{{ repository.html_url }}" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a></b> - {{ repository.description }}</li>
-        <br>
-        {% endif %}
-    {% endfor %}
+        {% for repository in site.github.public_repositories %}
+            {% assign repo_name = repository.name | downcase %}
+            {% if site.data.cv.projects contains repo_name %}
+                <li>
+                    <b>
+                        <a href="{{ repository.html_url }}.html" target="_blank" rel="noopener noreferrer">{{ repository.name }}</a>
+                    </b>
+                    -
+                    {{ repository.description }}</li>
+                <br>
+            {% endif %}
+        {% endfor %}
     </ul>
 </div>
-<div>
+<div style="margin-bottom: 20px;">
     <h1>Contact</h1>
     <div style="display: inline-flex; flex-direction: column;">
         <p>
-            Want to get in touch or just say hello? Send an email or connect with me on LinkedIn!
+            Want to get in touch or just say hello? Send an email or send a message on LinkedIn!
         </p>
         <div style="display: flex; justify-content: space-around;">
             {% for social in site.data.contact.social-media %}
-            {% assign title_downcase = social.title | downcase %}
-            {% if title_downcase == "email" %}
-            <a href="{{ social.href }}{{ social.id }}"><i class="{{ social.fa-icon }}"></i></a>
-            {% else %}
-            <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer"><i class="{{ social.fa-icon }}"></i></a>
-            {% endif %}
+                {% assign title_downcase = social.title | downcase %}
+                {% if title_downcase == "email" %}
+                    <a href="{{ social.href }}{{ social.id }}">
+                        <i class="{{ social.fa-icon }}"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ social.href }}{{ social.id }}" target="_blank" rel="noopener noreferrer">
+                        <i class="{{ social.fa-icon }}"></i>
+                    </a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
